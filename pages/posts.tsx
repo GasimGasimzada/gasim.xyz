@@ -21,7 +21,7 @@ const Home: NextPage<BlogProps> = ({ posts }) => {
             key={meta.slug}
             title={meta.title}
             cover={meta.cover}
-            url={`/stories/${meta.slug}`}
+            url={`/posts/${meta.slug}`}
             date={new Date(meta.date)}
           />
         ))}

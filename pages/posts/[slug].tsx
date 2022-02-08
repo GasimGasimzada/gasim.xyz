@@ -24,7 +24,7 @@ const PostPage: NextPage<PostPageProps> = ({ post }) => {
       <Head>
         <title>{post.meta.title} | Gasim</title>
       </Head>
-      <div className="sm:w-4/5 md:w-2/3 lg:w-1/2 sm:mx-auto">
+      <div className="sm:w-4/5 md:w-2/3 lg:w-1/2 sm:mx-auto pb-1">
         <div className="mb-2 text-sm">
           <Link href="/posts" passHref>
             <a className="group inline-block">

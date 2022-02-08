@@ -25,3 +25,5 @@ export const CoverImage = forwardRef(
     </Component>
   )
 );
+
+CoverImage.displayName = "forwardRef(CoverImage)";

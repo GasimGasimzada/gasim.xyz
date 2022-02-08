@@ -10,7 +10,7 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <header className="border border-indigo-601 h-12 flex flex-col justify-center">
-        <div className="container mx-auto flex flex-row text-lg">
+        <div className="container px-5 mx-auto flex flex-row text-lg">
           <div>
             <h1 className="font-bold">Gasim</h1>
           </div>
@@ -32,7 +32,7 @@ export const Layout = ({ children }: LayoutProps) => {
         </div>
       </header>
       <main className="grow">
-        <div className="container mx-auto my-4">{children}</div>
+        <div className="container px-5 mx-auto my-4">{children}</div>
       </main>
       <footer className="h-8 text-center">
         <small className="text-xs font-semibold">

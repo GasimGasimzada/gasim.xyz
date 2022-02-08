@@ -24,12 +24,15 @@ const PostPage: NextPage<PostPageProps> = ({ post }) => {
       <Head>
         <title>{post.meta.title} | Gasim</title>
       </Head>
-      <div className="w-1/2 mx-auto">
+      <div className="sm:w-4/5 md:w-2/3 lg:w-1/2 sm:mx-auto">
         <div className="mb-2 text-sm">
           <Link href="/posts" passHref>
-            <a>
-              <FontAwesomeIcon icon={faChevronLeft} className="mr-2" />
-              Back to posts
+            <a className="group inline-block">
+              <FontAwesomeIcon
+                icon={faChevronLeft}
+                className="mr-2 transition-transform group-hover:-translate-x-1"
+              />
+              Back to all adventures
             </a>
           </Link>
         </div>

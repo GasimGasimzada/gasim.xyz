@@ -1,14 +1,18 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
-import { remark } from "remark";
-import remarkHtml from "remark-html";
-import remarkPrism from "remark-prism";
+import rehypePrism from "@mapbox/rehype-prism";
+import rehypeStringify from "rehype-stringify/lib";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import { unified } from "unified";
 
 export const markdownToHtml = async (content: string): Promise<string> => {
-  const parser = remark()
-    .use(remarkHtml, { sanitize: false })
-    .use(remarkPrism as any);
+  const parser = unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypePrism)
+    .use(rehypeStringify);
   const result = await parser.process(content);
   return result.toString();
 };

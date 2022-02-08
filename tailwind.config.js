@@ -8,6 +8,17 @@ module.exports = {
       aspectRatio: {
         '3/2': '3 / 2',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            'code::before': null,
+            'code::after': null,
+            'code': {
+              background: '#f5f2f0'
+            }
+          }
+        }
+      }
     },
   },
   plugins: [require('@tailwindcss/typography')],

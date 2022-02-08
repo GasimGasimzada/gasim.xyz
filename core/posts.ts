@@ -51,7 +51,9 @@ export const getPost = (slug: string): ContentPost => {
 };
 
 export const getAllPosts = (): ContentPost[] => {
-  const slugs = getAllPostSlugs().map(getPost);
+  const slugs = getAllPostSlugs()
+    .map(getPost)
+    .sort((a, b) => b.meta.date.localeCompare(a.meta.date));
 
   return slugs;
 };

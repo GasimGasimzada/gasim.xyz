@@ -9,7 +9,7 @@ for an array of objects that represents a configuration, rather than data. So,
 every configuration can have different type requirements.
 
 In Typescript, tuple is an array where the number of items is know beforehand
-and the each item can have different types. This concept is exactly was I was
+and the each item can have different types. This concept is exactly what I was
 looking for but there was one catch -- I still wanted to retain some form of
 consistency among items:
 
@@ -32,7 +32,7 @@ that they accept is defined by the generic. I can already use this type to
 create my array:
 
 ```ts
-const config: [ItemConfig<number>, ItemConfig<number>] = [
+const config: [ItemConfig<number>, ItemConfig<string>] = [
   {
     data: [1, 2, 3, 4, 5],
     update(point: number) {
@@ -154,7 +154,7 @@ type Res = Config<[string, number, boolean]>;
 5. If we stich all the types together, we get the following final expression:
    `[ItemConfig<string>, ...[ItemConfig<number>, ...[ItemConfig<boolean>, ...[]]]]`
 6. Evaluating the expression will give us
-   `[ItemConfig<string>, ItemConfig<number>, ItemConfig<boolean>]`
+   `[ItemConfig<string>, ItemConfig<nu mber>, ItemConfig<boolean>]`
 
 ## Final Thoughts
 

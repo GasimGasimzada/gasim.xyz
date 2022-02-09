@@ -31,6 +31,7 @@ const PostPage: NextPage<PostPageProps> = ({ post }) => {
               <FontAwesomeIcon
                 icon={faChevronLeft}
                 className="mr-2 transition-transform group-hover:-translate-x-1"
+                style={{ fontSize: "1em" }}
               />
               Back to all adventures
             </a>

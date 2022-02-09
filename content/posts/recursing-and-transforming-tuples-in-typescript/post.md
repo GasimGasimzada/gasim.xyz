@@ -115,9 +115,9 @@ type NeverType = ExtractDataTypeFromItemConfig<string[]>;
 The passes type is not extended from `ItemConfig` type; so, the utility will
 return the "else" case, which is `never`.
 
-## Destructuring tuples
+## Spreading tuples
 
-Tuples or arrays can be destructured using the `...` syntax:
+Tuples or arrays can be spread using the `...` syntax:
 
 ```ts
 type A = ["a", "b", "c"];
@@ -127,7 +127,7 @@ type Merged = [...A, ...B]; // ['a', 'b', 'c', 'd', 'e', 'f']
 
 ## Putting it all together
 
-By using `infer` and destructuring, we can recursively wrap each element of a
+By using `infer` and tuple spreading, we can recursively wrap each element of a
 tuple type with anything; so, let's wrap them with `ItemConfig`:
 
 ```ts
@@ -172,3 +172,9 @@ const data: Config<string, number, boolean>;
 Unfortunately, this is not possible in Typescript 4.5. I am going to keep an eye
 on this since I believe that variadic generic arguments can open doors to a lot
 of interesting use-cases that are currently not possible.
+
+---
+
+#### Changelog
+
+- Changed the word "destructuring" to "spreading"

@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { Layout } from "../components/Layout";
 import { PostItem } from "../components/PostItem";
-import { ContentPost, getAllPosts, getAllPostSlugs } from "../core/posts";
+import { ContentPost, getAllPosts } from "../core/posts";
 
 interface BlogProps {
   posts: ContentPost[];

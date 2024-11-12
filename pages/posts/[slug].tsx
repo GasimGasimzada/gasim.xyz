@@ -22,19 +22,17 @@ const PostPage: NextPage<PostPageProps> = ({ post }) => {
   return (
     <Layout>
       <Head>
-        <title>{post.meta.title} | Gasim</title>
+        <title>{`${post.meta.title} | Gasim`}</title>
       </Head>
       <div className="sm:w-4/5 md:w-2/3 lg:w-1/2 sm:mx-auto pb-1">
         <div className="mb-2 text-sm">
-          <Link href="/posts" passHref>
-            <a className="group inline-block">
-              <FontAwesomeIcon
-                icon={faChevronLeft}
-                className="mr-2 transition-transform group-hover:-translate-x-1"
-                style={{ fontSize: "1em" }}
-              />
-              Back to all adventures
-            </a>
+          <Link href="/posts" className="group inline-block">
+            <FontAwesomeIcon
+              icon={faChevronLeft}
+              className="mr-2 transition-transform group-hover:-translate-x-1"
+              style={{ fontSize: "1em" }}
+            />
+            Back to all adventures
           </Link>
         </div>
         <article>

@@ -27,9 +27,8 @@ export interface PostItemProps {
 export const PostItem = ({ title, cover, url, date }: PostItemProps) => {
   return (
     <article className="group">
-      <Link href={url} passHref>
+      <Link href={url}>
         <CoverImage
-          as="a"
           src={cover}
           alt={title}
           className="group-hover:scale-110 transition-transform"

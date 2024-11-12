@@ -2,7 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import rehypePrism from "@mapbox/rehype-prism";
-import rehypeStringify from "rehype-stringify/lib";
+import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";

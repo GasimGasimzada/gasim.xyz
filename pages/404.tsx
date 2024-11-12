@@ -11,8 +11,8 @@ const NotFound = () => (
       <h1 className="text-2xl font-black">Page not found</h1>
       <p>
         Page you requested does not exist.{" "}
-        <Link href="/" passHref>
-          <a className="underline hover:no-underline">Go to home</a>
+        <Link href="/" passHref className="underline hover:no-underline">
+          Go to home
         </Link>
       </p>
     </article>

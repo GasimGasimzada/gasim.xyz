@@ -36,7 +36,7 @@ export const getAllPostSlugs = (): string[] => {
   return fs.readdirSync(POSTS_DIRECTORY);
 };
 
-export const getPost = (slug: string): ContentPost => {
+export async function getPost(slug: string): Promise<ContentPost> {
   const postPath = path.resolve(POSTS_DIRECTORY, slug, "post.md");
   const rawFile = fs.readFileSync(postPath, "utf-8");
 
@@ -47,13 +47,13 @@ export const getPost = (slug: string): ContentPost => {
     slug,
   };
 
-  return { meta, content: gm.content };
-};
+  const content = await markdownToHtml(gm.content);
 
-export const getAllPosts = (): ContentPost[] => {
-  const slugs = getAllPostSlugs()
-    .map(getPost)
-    .sort((a, b) => b.meta.date.localeCompare(a.meta.date));
+  return { meta, content };
+}
 
+export async function getAllPosts(): Promise<ContentPost[]> {
+  const slugs = await Promise.all(getAllPostSlugs().map(getPost));
+  slugs.sort((a, b) => b.meta.date.localeCompare(a.meta.date));
   return slugs;
-};
+}

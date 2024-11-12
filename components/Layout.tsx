@@ -23,10 +23,7 @@ export const Layout = ({ children }: LayoutProps) => {
                   rel="external nofollow noreferrer"
                   className="inline-block transition-transform hover:scale-110"
                 >
-                  <FontAwesomeIcon
-                    icon={faGithub}
-                    style={{ fontSize: "1em" }}
-                  />
+                  <FontAwesomeIcon icon={faGithub} className="text-base" />
                   <span className="sr-only">Github</span>
                 </a>
               </li>
